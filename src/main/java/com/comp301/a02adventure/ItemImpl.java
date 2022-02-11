@@ -16,10 +16,11 @@ public class ItemImpl implements Item {
   }
 
   public boolean equals(Object other) {
-    if (other.toString() == null) {
-      throw new IllegalArgumentException();
+    ItemImpl temp = (ItemImpl) other;
+    if (temp.name.equals(null)) {
+      throw new IllegalArgumentException("Item not define");
     } else {
-      return this.name.equals(other.toString());
+      return this.name.equals(temp.name);
     }
   }
 
