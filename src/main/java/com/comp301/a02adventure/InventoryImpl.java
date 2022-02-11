@@ -7,7 +7,7 @@ public class InventoryImpl implements Inventory {
   private List<Item> itemslist;
 
   public InventoryImpl() {
-    this.itemslist = new ArrayList<Item>();
+    this.itemslist = new ArrayList<Item>;
   }
 
   public boolean isEmpty() {
