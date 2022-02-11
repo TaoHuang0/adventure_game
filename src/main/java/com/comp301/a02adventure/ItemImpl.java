@@ -16,6 +16,9 @@ public class ItemImpl implements Item {
   }
 
   public boolean equals(Object other) {
+    if (other == null) {
+      throw new IllegalArgumentException();
+    }
     return this.name.equals(other);
   }
 
