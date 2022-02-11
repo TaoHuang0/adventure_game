@@ -69,9 +69,9 @@ public class CellImpl implements Cell {
 
   public void setChest(Inventory chest) {
     if (chest != null) {
-      Inventory treasure = chest;
+      this.chest = chest;
     } else {
-      Inventory treasure = null;
+      this.chest = null;
     }
   }
 
