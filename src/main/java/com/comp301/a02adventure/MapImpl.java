@@ -11,6 +11,7 @@ public class MapImpl implements Map {
     this.width = width;
     this.height = height;
     this.numItems = numItems;
+    this.objects = new Cell[width][height];
     for (int i = 0; i < width; i++) {
       for (int j = 0; j < height; j++) {
         objects[i][j] = new CellImpl(i, j);
@@ -45,7 +46,6 @@ public class MapImpl implements Map {
     if (x > width || y > height) {
       throw new IndexOutOfBoundsException("x or y not valid");
     }
-    objects[x][y] = null;
     objects[x][y] = new CellImpl(x, y);
   }
 
