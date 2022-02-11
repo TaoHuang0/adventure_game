@@ -5,13 +5,12 @@ public class MapImpl implements Map {
   private Cell[][] objects;
 
   public MapImpl(int width, int height, int numItems) {
-    if (width < 0 || height < 0 || numItems < 0) {
+    if (width < 0 || height < 0) {
       throw new IllegalArgumentException("Negative width or height is not allowed");
     }
     this.width = width;
     this.height = height;
     this.numItems = numItems;
-    this.objects = new Cell[width][height];
     for (int i = 0; i < width; i++) {
       for (int j = 0; j < height; j++) {
         objects[i][j] = new CellImpl(i, j);
