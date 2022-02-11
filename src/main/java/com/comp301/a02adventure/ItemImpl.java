@@ -1,7 +1,7 @@
 package com.comp301.a02adventure;
 
 public class ItemImpl implements Item {
-  private static String name;
+  private String name;
 
   public ItemImpl(String name) {
     this.name = name;
