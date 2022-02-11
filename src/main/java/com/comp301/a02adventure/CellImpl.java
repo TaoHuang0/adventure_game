@@ -71,9 +71,10 @@ public class CellImpl implements Cell {
 
   public void setChest(Inventory chest) {
     if (chest != null) {
+      this.chest = new InventoryImpl();
       this.chest = chest;
     } else {
-      throw new IllegalArgumentException("Name not valid");
+      throw new IllegalArgumentException("Chest not exist");
     }
   }
 
