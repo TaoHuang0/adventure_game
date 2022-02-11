@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class InventoryImpl implements Inventory {
-  private ArrayList<Item> itemslist;
+  private List<Item> itemslist;
 
   public InventoryImpl() {
     this.itemslist = null;
@@ -15,7 +15,7 @@ public class InventoryImpl implements Inventory {
   }
 
   public int getNumItems() {
-    if (this.itemslist.size() != 0) {
+    if (!isEmpty()) {
       return this.itemslist.size();
     } else {
       throw new IllegalArgumentException("No value");
@@ -23,8 +23,9 @@ public class InventoryImpl implements Inventory {
   }
 
   public List<Item> getItems() {
-    List<Item> temp = (List<Item>) this.itemslist.clone();
-    return temp;
+    ArrayList<Item> cloned_list = new ArrayList<Item>();
+    cloned_list.addAll(this.itemslist);
+    return cloned_list;
   }
 
   public void addItem(Item item) {
