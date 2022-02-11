@@ -7,7 +7,7 @@ public class InventoryImpl implements Inventory {
   private List<Item> itemslist;
 
   public InventoryImpl() {
-    this.itemslist = new ArrayList<Item>;
+    this.itemslist = new ArrayList<Item>();
   }
 
   public boolean isEmpty() {
@@ -23,7 +23,7 @@ public class InventoryImpl implements Inventory {
   }
 
   public List<Item> getItems() {
-    List<Item> cloned_list = new ArrayList<Item>;
+    List<Item> cloned_list = new ArrayList<Item>();
     cloned_list.addAll(this.itemslist);
     return cloned_list;
   }
