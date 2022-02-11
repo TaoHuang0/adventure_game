@@ -17,7 +17,8 @@ public class CellImpl implements Cell {
     this.description = description;
     this.flag = false;
     pos = new PositionImpl(x, y);
-    this.chest = new InventoryImpl();
+    Inventory t = new InventoryImpl();
+    this.chest = t;
   }
 
   public CellImpl(int x, int y) {
