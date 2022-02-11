@@ -17,6 +17,7 @@ public class CellImpl implements Cell {
     this.description = description;
     this.flag = false;
     pos = new PositionImpl(x, y);
+    this.chest = new InventoryImpl();
   }
 
   public CellImpl(int x, int y) {
@@ -36,7 +37,11 @@ public class CellImpl implements Cell {
   }
 
   public Inventory getChest() {
-    return chest;
+    if (chest == null) {
+      return null;
+    } else {
+      return chest;
+    }
   }
 
   public boolean getIsVisited() {
@@ -70,8 +75,6 @@ public class CellImpl implements Cell {
   public void setChest(Inventory chest) {
     if (chest != null) {
       this.chest = chest;
-    } else {
-      this.chest = null;
     }
   }
 
