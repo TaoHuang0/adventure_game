@@ -14,7 +14,7 @@ public class MapImpl implements Map {
     this.objects = new Cell[width][height];
     for (int i = 0; i < width; i++) {
       for (int j = 0; j < height; j++) {
-        objects[i][j] = new CellImpl(i, j);
+        objects[i][j] = null;
       }
     }
   }
