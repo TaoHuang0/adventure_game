@@ -4,10 +4,11 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class InventoryImpl implements Inventory {
-  private List<Item> itemslist;
+  private ArrayList<Item> itemslist;
 
   public InventoryImpl() {
-    this.itemslist = new ArrayList<Item>();
+    ArrayList<Item> items = new ArrayList<Item>();
+    this.itemslist = items;
   }
 
   public boolean isEmpty() {
@@ -15,11 +16,7 @@ public class InventoryImpl implements Inventory {
   }
 
   public int getNumItems() {
-    if (!isEmpty()) {
-      return this.itemslist.size();
-    } else {
-      throw new IllegalArgumentException("No value");
-    }
+    return this.itemslist.size();
   }
 
   public List<Item> getItems() {
