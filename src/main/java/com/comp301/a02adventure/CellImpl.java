@@ -8,7 +8,7 @@ public class CellImpl implements Cell {
   private boolean flag;
 
   public CellImpl(int x, int y, String name, String description) {
-    if (name.equals(null) || description.equals(null)) {
+    if (name == null || description == null) {
       throw new IllegalArgumentException("No name or no description");
     }
     this.name = name;
