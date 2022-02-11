@@ -1,11 +1,13 @@
 package com.comp301.a02adventure;
 
+import java.util.Optional;
+
 public class CellImpl implements Cell {
   private Position pos;
   private String name;
   private String description;
-  private Inventory chest;
   private boolean flag;
+  private Inventory chest;
 
   public CellImpl(int x, int y, String name, String description) {
     if (name == null || description == null) {
@@ -34,11 +36,7 @@ public class CellImpl implements Cell {
   }
 
   public Inventory getChest() {
-    if (this.chest != null) {
-      return chest;
-    } else {
-      throw new IllegalArgumentException("No chest exist");
-    }
+    throw new IllegalArgumentException("No chest exist");
   }
 
   public boolean getIsVisited() {
@@ -72,7 +70,6 @@ public class CellImpl implements Cell {
   public void setChest(Inventory chest) {
     if (chest != null) {
       Inventory treasure = chest;
-      this.chest = treasure;
     } else {
       throw new IllegalArgumentException("Chest not exist");
     }
