@@ -17,6 +17,8 @@ public class InventoryImpl implements Inventory {
   public int getNumItems() {
     if (this.itemslist.size() != 0) {
       return this.itemslist.size();
+    } else {
+      throw new IllegalArgumentException("No value");
     }
   }
 
