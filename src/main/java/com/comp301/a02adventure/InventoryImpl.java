@@ -15,15 +15,20 @@ public class InventoryImpl implements Inventory {
   }
 
   public int getNumItems() {
-    return this.itemslist.size();
+    if (this.itemslist.size() != 0) {
+      return this.itemslist.size();
+    }
   }
 
   public List<Item> getItems() {
-    return (List<Item>) this.itemslist.clone();
+    List<Item> temp = (List<Item>) this.itemslist.clone();
+    return temp;
   }
 
   public void addItem(Item item) {
-    this.itemslist.add(item);
+    if (item.getName() != null) {
+      this.itemslist.add(item);
+    }
   }
 
   public void removeItem(Item item) {
@@ -35,9 +40,7 @@ public class InventoryImpl implements Inventory {
   }
 
   public void transferFrom(Inventory other) {
-    for (int i = 0; i < other.getNumItems(); i++) {
-      this.itemslist.addAll(other.getItems());
-    }
+    this.itemslist.addAll(other.getItems());
     other.clear();
   }
 }
