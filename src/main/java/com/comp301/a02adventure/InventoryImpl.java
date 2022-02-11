@@ -23,7 +23,7 @@ public class InventoryImpl implements Inventory {
   }
 
   public List<Item> getItems() {
-    ArrayList<Item> cloned_list = new ArrayList<Item>();
+    List<Item> cloned_list = new ArrayList<Item>;
     cloned_list.addAll(this.itemslist);
     return cloned_list;
   }
