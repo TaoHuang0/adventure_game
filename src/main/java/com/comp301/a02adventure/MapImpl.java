@@ -5,13 +5,7 @@ public class MapImpl implements Map {
   private Cell[][] objects;
 
   public MapImpl(int width, int height, int numItems) {
-      System.out.println("width = ");
-      System.out.println(width);
-      System.out.println("  height = ");
-      System.out.println(height);
-      System.out.println("  numItems = ");
-      System.out.println(numItems);
-    if (width < 0 || height < 0) {
+    if (width < 0 || height < 0 || numItems <= 0) {
       throw new IllegalArgumentException("Negative width or height is not allowed");
     }
     this.width = width;
