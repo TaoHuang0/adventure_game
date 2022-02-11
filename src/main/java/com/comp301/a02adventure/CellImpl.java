@@ -38,11 +38,7 @@ public class CellImpl implements Cell {
   }
 
   public Inventory getChest() {
-    if (chest == null) {
-      return null;
-    } else {
       return chest;
-    }
   }
 
   public boolean getIsVisited() {
