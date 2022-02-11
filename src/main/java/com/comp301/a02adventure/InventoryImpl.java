@@ -7,11 +7,11 @@ public class InventoryImpl implements Inventory {
   private List<Item> itemslist;
 
   public InventoryImpl() {
-    this.itemslist = null;
+    this.itemslist = new ArrayList<Item>();
   }
 
   public boolean isEmpty() {
-    return this.itemslist == null;
+    return this.itemslist.isEmpty();
   }
 
   public int getNumItems() {
