@@ -11,19 +11,14 @@ public class CellImpl implements Cell {
     if (name.equals(null) || description.equals(null)) {
       throw new IllegalArgumentException("No name or no description");
     }
-    pos = new PositionImpl(x, y);
     this.name = name;
     this.description = description;
     this.flag = false;
-    this.chest = null;
+    pos = new PositionImpl(x, y);
   }
 
   public CellImpl(int x, int y) {
-    pos = new PositionImpl(x, y);
-    this.name = null;
-    this.description = null;
-    this.flag = false;
-    this.chest = null;
+    this(x, y, "", "");
   }
 
   public String getName() {
