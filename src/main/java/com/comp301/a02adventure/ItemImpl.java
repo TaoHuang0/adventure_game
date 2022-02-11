@@ -17,11 +17,7 @@ public class ItemImpl implements Item {
 
   public boolean equals(Object other) {
     ItemImpl temp = (ItemImpl) other;
-    if (temp.name.equals(null)) {
-      throw new IllegalArgumentException("Item not define");
-    } else {
       return this.name.equals(temp.name);
-    }
   }
 
   public String toString() {
