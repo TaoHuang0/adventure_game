@@ -8,20 +8,22 @@ public class CellImpl implements Cell {
   private boolean flag;
 
   public CellImpl(int x, int y, String name, String description) {
-    this(x, y);
-    this.name = name;
-    this.description = description;
-    this.flag = false;
     if (name.equals(null) || description.equals(null)) {
       throw new IllegalArgumentException("No name or no description");
     }
-    chest = null;
+    pos = new PositionImpl(x, y);
+    this.name = name;
+    this.description = description;
+    this.flag = false;
+    this.chest = null;
   }
 
   public CellImpl(int x, int y) {
     pos = new PositionImpl(x, y);
     this.name = null;
     this.description = null;
+    this.flag = false;
+    this.chest = null;
   }
 
   public String getName() {
