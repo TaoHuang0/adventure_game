@@ -36,7 +36,7 @@ public class CellImpl implements Cell {
   }
 
   public Inventory getChest() {
-    throw new IllegalArgumentException("No chest exist");
+    return chest;
   }
 
   public boolean getIsVisited() {
@@ -71,7 +71,7 @@ public class CellImpl implements Cell {
     if (chest != null) {
       Inventory treasure = chest;
     } else {
-      throw new IllegalArgumentException("Chest not exist");
+      Inventory treasure = null;
     }
   }
 
