@@ -4,7 +4,11 @@ public class ItemImpl implements Item {
   private String name;
 
   public ItemImpl(String name) {
-    this.name = name;
+    if (name == null) {
+      throw new IllegalArgumentException("No item detected.");
+    } else {
+      this.name = name;
+    }
   }
 
   public String getName() {
@@ -12,11 +16,7 @@ public class ItemImpl implements Item {
   }
 
   public boolean equals(Object other) {
-    if (this.name == other) {
-      return true;
-    } else {
-      return false;
-    }
+    return this.name.equals(other);
   }
 
   public String toString() {
