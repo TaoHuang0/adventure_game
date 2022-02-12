@@ -7,7 +7,7 @@ public class GameImpl implements Game {
   private Player player;
 
   public GameImpl(Map map, Player player) {
-    if(map == null || player == null) {
+    if (map == null || player == null) {
       throw new IllegalArgumentException("Invalid name or player");
     }
     this.map = map;
