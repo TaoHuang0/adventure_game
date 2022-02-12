@@ -10,7 +10,6 @@ public class CellImpl implements Cell {
   private Inventory chest;
 
   public CellImpl(int x, int y, String name, String description) {
-    System.out.println("a");
     if (name == null || description == null) {
       throw new IllegalArgumentException("No name or no description");
     }
@@ -29,27 +28,22 @@ public class CellImpl implements Cell {
   }
 
   public String getDescription() {
-    System.out.println("b");
     return this.description;
   }
 
   public Position getPosition() {
-    System.out.println("c");
     return pos;
   }
 
   public Inventory getChest() {
-    System.out.println("d");
     return chest;
   }
 
   public boolean getIsVisited() {
-    System.out.println("e");
     return flag;
   }
 
   public boolean hasChest() {
-    System.out.println("e");
     if (this.chest != null) {
       return true;
     } else {
@@ -58,7 +52,6 @@ public class CellImpl implements Cell {
   }
 
   public void setName(String name) {
-    System.out.println("f");
     if (name != null) {
       this.name = name;
     } else {
@@ -67,7 +60,6 @@ public class CellImpl implements Cell {
   }
 
   public void setDescription(String description) {
-    System.out.println("g");
     if (description != null) {
       this.description = description;
     } else {
@@ -76,15 +68,14 @@ public class CellImpl implements Cell {
   }
 
   public void setChest(Inventory chest) {
-    System.out.println("h");
-    System.out.println(chest.isEmpty());
     if (chest != null) {
       this.chest = chest;
+    } else {
+      throw new IllegalArgumentException("Empty chest");
     }
   }
 
   public void visit() {
-    System.out.println("i");
     flag = true;
   }
 }
