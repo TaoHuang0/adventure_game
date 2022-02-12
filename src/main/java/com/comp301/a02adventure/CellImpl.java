@@ -77,6 +77,7 @@ public class CellImpl implements Cell {
 
   public void setChest(Inventory chest) {
     System.out.println("h");
+    System.out.println(chest.isEmpty());
     if (chest != null) {
       this.chest = chest;
     }
