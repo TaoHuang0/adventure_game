@@ -23,14 +23,14 @@ public class MapImpl implements Map {
   }
 
   public Cell getCell(int x, int y) {
-    if (x > width || y > height) {
+    if (x >= width || y >= height || x < 0 || y < 0) {
       throw new IndexOutOfBoundsException("x or y not valid");
     }
     return objects[x][y];
   }
 
   public Cell getCell(Position position) {
-    if (position.getX() > width || position.getY() > height) {
+    if (position.getX() >= width || position.getY() >= height || position.getX() < 0 || position.getY() < 0) {
       throw new IndexOutOfBoundsException("x or y not valid");
     }
     Cell temp = new CellImpl(position.getX(), position.getY());
@@ -38,17 +38,13 @@ public class MapImpl implements Map {
   }
 
   public void initCell(int x, int y) {
-    System.out.println("x " + " y\n");
     if (x >= width || y >= height || x < 0 || y < 0) {
-      System.out.println("abc");
       throw new IndexOutOfBoundsException("x or y not valid");
     }
     if (objects[x][y] != null) {
       objects[x][y] = null;
-      System.out.println("abcde");
     }
     objects[x][y] = new CellImpl(x, y);
-    System.out.println("abcdefg");
   }
 
   public int getNumItems() {
