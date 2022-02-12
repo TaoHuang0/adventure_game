@@ -38,9 +38,9 @@ public class MapImpl implements Map {
         || position.getX() < 0
         || position.getY() < 0) {
       throw new IndexOutOfBoundsException("x or y not valid");
+    } else {
+      return objects[position.getX()][position.getY()];
     }
-    Cell temp = new CellImpl(position.getX(), position.getY());
-    return temp;
   }
 
   public void initCell(int x, int y) {
