@@ -78,7 +78,7 @@ public class CellImpl implements Cell {
   public void setChest(Inventory chest) {
     System.out.println("h");
     if (chest != null) {
-      this.chest.transferFrom(chest);
+      this.chest = chest;
     }
   }
 
