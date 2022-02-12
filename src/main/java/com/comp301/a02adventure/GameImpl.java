@@ -71,8 +71,7 @@ public class GameImpl implements Game {
   public void move(Direction direction) {
     if (canMove(direction)) {
       player.move(direction);
-      System.out.println(map.getCell(player.getPosition()));
-
+      printCellInfo();
     } else {
       System.out.println("You can't go that way! Try another direction.");
     }
