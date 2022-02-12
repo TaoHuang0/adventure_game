@@ -5,6 +5,7 @@ public class MapImpl implements Map {
   private Cell[][] objects;
 
   public MapImpl(int width, int height, int numItems) {
+    System.out.println("a");
     if (width <= 0 || height <= 0) {
       throw new IllegalArgumentException("Negative width or height is not allowed");
     }
@@ -23,6 +24,7 @@ public class MapImpl implements Map {
   }
 
   public Cell getCell(int x, int y) {
+    System.out.println("b");
     if (x >= width || y >= height || x < 0 || y < 0) {
       throw new IndexOutOfBoundsException("x or y not valid");
     }
@@ -30,6 +32,7 @@ public class MapImpl implements Map {
   }
 
   public Cell getCell(Position position) {
+    System.out.println("c");
     if (position.getX() >= width
         || position.getY() >= height
         || position.getX() < 0
@@ -41,16 +44,15 @@ public class MapImpl implements Map {
   }
 
   public void initCell(int x, int y) {
+    System.out.println("d");
     if (x >= width || y >= height || x < 0 || y < 0) {
       throw new IndexOutOfBoundsException("x or y not valid");
-    }
-    if (objects[x][y] != null) {
-      objects[x][y] = null;
     }
     objects[x][y] = new CellImpl(x, y);
   }
 
   public int getNumItems() {
+    System.out.println("e");
     return numItems;
   }
 }
