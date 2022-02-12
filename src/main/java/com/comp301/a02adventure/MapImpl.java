@@ -30,7 +30,10 @@ public class MapImpl implements Map {
   }
 
   public Cell getCell(Position position) {
-    if (position.getX() >= width || position.getY() >= height || position.getX() < 0 || position.getY() < 0) {
+    if (position.getX() >= width
+        || position.getY() >= height
+        || position.getX() < 0
+        || position.getY() < 0) {
       throw new IndexOutOfBoundsException("x or y not valid");
     }
     Cell temp = new CellImpl(position.getX(), position.getY());
