@@ -7,6 +7,9 @@ public class GameImpl implements Game {
   private Player player;
 
   public GameImpl(Map map, Player player) {
+    if(map == null || player == null) {
+      throw new IllegalArgumentException("Invalid name or player");
+    }
     this.map = map;
     this.player = player;
   }
@@ -51,8 +54,8 @@ public class GameImpl implements Game {
   }
 
   public boolean canMove(Direction direction) {
-    if (player.getPosition().getNeighbor(direction).getX() <= map.getWidth()
-        && player.getPosition().getNeighbor(direction).getY() <= map.getHeight()
+    if (player.getPosition().getNeighbor(direction).getX() < map.getWidth()
+        && player.getPosition().getNeighbor(direction).getY() < map.getHeight()
         && map.getCell(
                 player.getPosition().getNeighbor(direction).getX(),
                 player.getPosition().getNeighbor(direction).getY())
