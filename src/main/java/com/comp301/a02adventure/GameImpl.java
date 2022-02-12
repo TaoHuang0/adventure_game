@@ -28,9 +28,13 @@ public class GameImpl implements Game {
   }
 
   public boolean getIsWinner() {
+    System.out.println(map.getNumItems());
+    System.out.println(player.getInventory());
     if (map.getNumItems() == 0) {
+      System.out.println("=0");
       return true;
     } else {
+      System.out.println("!=0");
       return false;
     }
   }
