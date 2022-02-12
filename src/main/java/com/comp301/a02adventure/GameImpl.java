@@ -52,8 +52,7 @@ public class GameImpl implements Game {
       System.out.println("The chest is empty.");
     } else if (map.getCell(player.getPosition()).hasChest() == true) {
       System.out.println(
-          "You collected these items: "
-              + map.getCell(player.getPosition()).getChest().getItems().toString());
+          "You collected these items: " + map.getCell(player.getPosition()).getChest().getItems());
       player.getInventory().transferFrom(map.getCell(player.getPosition()).getChest());
     } else {
       System.out.println("No chest to open, sorry!");
