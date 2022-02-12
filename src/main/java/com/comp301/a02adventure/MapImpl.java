@@ -43,14 +43,10 @@ public class MapImpl implements Map {
   }
 
   public void initCell(int x, int y) {
-    System.out.println(x);
-    System.out.println(y);
     if (x >= width || y >= height) {
       throw new IndexOutOfBoundsException("x or y not valid");
     }
-    System.out.println("ab");
     objects[x][y] = new CellImpl(x, y);
-    System.out.println("abcdefg");
   }
 
   public int getNumItems() {
