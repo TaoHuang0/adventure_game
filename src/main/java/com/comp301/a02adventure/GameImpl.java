@@ -54,7 +54,7 @@ public class GameImpl implements Game {
       player.getInventory().transferFrom(map.getCell(player.getPosition()).getChest());
       System.out.println(
           "You collected these items: "
-              + map.getCell(player.getPosition()).getChest().getItems().toString());
+              + map.getCell(player.getPosition()).getChest().getItems());
     } else {
       System.out.println("No chest to open, sorry!");
     }
