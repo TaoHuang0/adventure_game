@@ -28,11 +28,7 @@ public class GameImpl implements Game {
   }
 
   public boolean getIsWinner() {
-    if (map.getNumItems() == 0) {
-      return true;
-    } else {
-      return false;
-    }
+    return map.getNumItems() == 0;
   }
 
   public void printCellInfo() {
